@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getComputerChoice(){
+            const choices = ["rock", "paper","scissors"]; // define the array of choices
+
+            // Math.random() to generate a random number between 0 and 1
+            // let a = Math.random();
+            // console.log(a);
+
+            // Multiply this number by the length of the array using the choices.length property
+            // let b = a*choices.length;
+            // console.log(b);
+
+            // Math.floor() function to round down the decimal to the nearest whole number to give valid index in array.
+            // let c = Math.floor(b);
+            // console.log(c);
+            // console.log(choices[c]);
+            
+            // All above steps inside one line and value returned
+            let computerChoice = choices[Math.floor(Math.random()*choices.length)];  
+            return computerChoice;
+        }
+
+    </script>
+</body>
+</html>
