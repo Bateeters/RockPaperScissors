@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+
         function getComputerChoice(){
             const choices = ["rock", "paper","scissors"]; // define the array of choices
 
@@ -30,8 +31,7 @@
 
         function playGame(playerSelection, computerSelection){
             let results;
-            playerSelection = playerSelection.toLowerCase();
-            if (playerSelection === "rock"){
+            if (playerSelection === "rock"){ // code for if player picked rock
                 if  (computerSelection === "paper") {
                     results = "You lose! Paper beats Rock.";
                 } else if (computerSelection === "scissors") {
@@ -39,7 +39,7 @@
                 } else {
                     results = "It's a tie, you both picked Rock.";
                 }
-            } else if (playerSelection === "paper") {
+            } else if (playerSelection === "paper") { // code for if player picked paper
                 if  (computerSelection === "scissors") {
                     results = "You lose! Scissors beats Paper.";
                 } else if (computerSelection === "rock") {
@@ -47,7 +47,7 @@
                 } else {
                     results = "It's a tie, you both picked Paper.";
                 }
-            } else {
+            } else if (playerSelection ==="scissors"){ // code for if player picked scissors
                 if  (computerSelection === "rock") {
                     results = "You lose! Rock beats Scissors.";
                 } else if (computerSelection === "paper") {
@@ -55,14 +55,32 @@
                 } else {
                     results = "It's a tie, you both picked Scissors.";
                 }
+            } else { // code for if player did not enter rock, paper, or scissors
+                results = "You did not pick rock, paper, or scissors. You automatically lost!"
             }
             return results
         }
 
-        let playerSelection = prompt("rock, paper, or scissors?");
+        function bestOfFive(){
+            // loop to play 5 matches
+            for (let i = 0; i<5; i++){
 
-      playGame(playerSelection,getComputerChoice());
+                // get user choice every loop
+                let userInput = prompt("rock, paper, or scissors?");
 
+                // get computer choice every loop by calling getComputerChoice() and assigning it to local variable
+                computerSelection = getComputerChoice();
+
+                // call playGame() function using the assigned user's and computer's choices variables
+                // assign the function itself to a variable so you can use the results
+                let result = playGame(userInput, computerSelection);
+
+                // log the playGame() results out to the console
+                console.log(result);
+
+                // One iteration (match) is done and the loop repeats until it goes 5 times
+            }
+        }
     </script>
 </body>
 </html>
