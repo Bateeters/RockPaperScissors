@@ -28,6 +28,41 @@
             return computerChoice;
         }
 
+        function playGame(playerSelection, computerSelection){
+            let results;
+            playerSelection = playerSelection.toLowerCase();
+            if (playerSelection === "rock"){
+                if  (computerSelection === "paper") {
+                    results = "You lose! Paper beats Rock.";
+                } else if (computerSelection === "scissors") {
+                    results = "You Win! Rock beats Scissors.";
+                } else {
+                    results = "It's a tie, you both picked Rock.";
+                }
+            } else if (playerSelection === "paper") {
+                if  (computerSelection === "scissors") {
+                    results = "You lose! Scissors beats Paper.";
+                } else if (computerSelection === "rock") {
+                    results = "You Win! Paper beats Rock.";
+                } else {
+                    results = "It's a tie, you both picked Paper.";
+                }
+            } else {
+                if  (computerSelection === "rock") {
+                    results = "You lose! Rock beats Scissors.";
+                } else if (computerSelection === "paper") {
+                    results = "You Win! Scissors beats Paper.";
+                } else {
+                    results = "It's a tie, you both picked Scissors.";
+                }
+            }
+            return results
+        }
+
+        let playerSelection = prompt("rock, paper, or scissors?");
+
+      playGame(playerSelection,getComputerChoice());
+
     </script>
 </body>
 </html>
